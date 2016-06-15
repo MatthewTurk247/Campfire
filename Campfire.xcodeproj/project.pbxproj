@@ -1,0 +1,632 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EB5BCE961D11BBD800076874 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5BCE951D11BBD800076874 /* AppDelegate.swift */; };
+		EB5BCE981D11BBD800076874 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5BCE971D11BBD800076874 /* ViewController.swift */; };
+		EB5BCE9B1D11BBD800076874 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB5BCE991D11BBD800076874 /* Main.storyboard */; };
+		EB5BCE9E1D11BBD800076874 /* Campfire.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EB5BCE9C1D11BBD800076874 /* Campfire.xcdatamodeld */; };
+		EB5BCEA01D11BBD800076874 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB5BCE9F1D11BBD800076874 /* Assets.xcassets */; };
+		EB5BCEA31D11BBD800076874 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB5BCEA11D11BBD800076874 /* LaunchScreen.storyboard */; };
+		EB5BCEAE1D11BBD800076874 /* CampfireTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5BCEAD1D11BBD800076874 /* CampfireTests.swift */; };
+		EB5BCEB91D11BBD800076874 /* CampfireUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5BCEB81D11BBD800076874 /* CampfireUITests.swift */; };
+		EB5BCEC71D11BBF800076874 /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB5BCEC61D11BBF800076874 /* Firebase.framework */; };
+		EB5BCEC91D11BC0700076874 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB5BCEC81D11BC0700076874 /* CFNetwork.framework */; };
+		EB5BCECB1D11BC1100076874 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB5BCECA1D11BC1100076874 /* Security.framework */; };
+		EB5BCECD1D11BC1900076874 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB5BCECC1D11BC1900076874 /* SystemConfiguration.framework */; };
+		EB5BCECF1D11BC4800076874 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = EB5BCECE1D11BC4800076874 /* libicucore.tbd */; };
+		EB5BCED11D11BC5600076874 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = EB5BCED01D11BC5600076874 /* libc++.tbd */; };
+		EB5BCED71D11BECD00076874 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5BCED61D11BECD00076874 /* APIClient.swift */; };
+		EB5BCED91D11BF2000076874 /* CampCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5BCED81D11BF1F00076874 /* CampCell.swift */; };
+		EB5BCEDB1D11BF9300076874 /* CampCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5BCEDA1D11BF9300076874 /* CampCollectionViewCell.swift */; };
+		EB5BCEDD1D11BFEE00076874 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5BCEDC1D11BFEE00076874 /* CustomTableViewCell.swift */; };
+		EB5BCEDF1D11C03100076874 /* DiscoverTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5BCEDE1D11C03100076874 /* DiscoverTableViewController.swift */; };
+		EB5BCEE11D11C09500076874 /* FoursquareModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5BCEE01D11C09500076874 /* FoursquareModels.swift */; };
+		EB5BCEE31D11C0D700076874 /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5BCEE21D11C0D700076874 /* HomeTableViewController.swift */; };
+		EB5BCEE51D11C14B00076874 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5BCEE41D11C14B00076874 /* LocationManager.swift */; };
+		EB5BCEE71D11C18800076874 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5BCEE61D11C18800076874 /* LoginViewController.swift */; };
+		EB5BCEE91D11C1E200076874 /* MoreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5BCEE81D11C1E200076874 /* MoreTableViewController.swift */; };
+		EB5BCEEB1D11C22800076874 /* SignOrLogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5BCEEA1D11C22800076874 /* SignOrLogViewController.swift */; };
+		EB5BCEED1D11C26100076874 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5BCEEC1D11C26100076874 /* SignUpViewController.swift */; };
+		EB5BCEEF1D11C2B200076874 /* CampTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5BCEEE1D11C2B200076874 /* CampTabBarController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EB5BCEAA1D11BBD800076874 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EB5BCE8A1D11BBD800076874 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EB5BCE911D11BBD800076874;
+			remoteInfo = Campfire;
+		};
+		EB5BCEB51D11BBD800076874 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EB5BCE8A1D11BBD800076874 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EB5BCE911D11BBD800076874;
+			remoteInfo = Campfire;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		EB5BCE921D11BBD800076874 /* Campfire.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Campfire.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB5BCE951D11BBD800076874 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EB5BCE971D11BBD800076874 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EB5BCE9A1D11BBD800076874 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EB5BCE9D1D11BBD800076874 /* Campfire.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Campfire.xcdatamodel; sourceTree = "<group>"; };
+		EB5BCE9F1D11BBD800076874 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EB5BCEA21D11BBD800076874 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EB5BCEA41D11BBD800076874 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EB5BCEA91D11BBD800076874 /* CampfireTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CampfireTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB5BCEAD1D11BBD800076874 /* CampfireTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampfireTests.swift; sourceTree = "<group>"; };
+		EB5BCEAF1D11BBD800076874 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EB5BCEB41D11BBD800076874 /* CampfireUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CampfireUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB5BCEB81D11BBD800076874 /* CampfireUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampfireUITests.swift; sourceTree = "<group>"; };
+		EB5BCEBA1D11BBD800076874 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EB5BCEC61D11BBF800076874 /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Firebase.framework; sourceTree = "<group>"; };
+		EB5BCEC81D11BC0700076874 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		EB5BCECA1D11BC1100076874 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		EB5BCECC1D11BC1900076874 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		EB5BCECE1D11BC4800076874 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
+		EB5BCED01D11BC5600076874 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		EB5BCED61D11BECD00076874 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIClient.swift; path = ../APIClient.swift; sourceTree = "<group>"; };
+		EB5BCED81D11BF1F00076874 /* CampCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CampCell.swift; path = ../CampCell.swift; sourceTree = "<group>"; };
+		EB5BCEDA1D11BF9300076874 /* CampCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CampCollectionViewCell.swift; sourceTree = "<group>"; };
+		EB5BCEDC1D11BFEE00076874 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		EB5BCEDE1D11C03100076874 /* DiscoverTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverTableViewController.swift; sourceTree = "<group>"; };
+		EB5BCEE01D11C09500076874 /* FoursquareModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FoursquareModels.swift; path = ../FoursquareModels.swift; sourceTree = "<group>"; };
+		EB5BCEE21D11C0D700076874 /* HomeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeTableViewController.swift; path = ../HomeTableViewController.swift; sourceTree = "<group>"; };
+		EB5BCEE41D11C14B00076874 /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationManager.swift; path = ../LocationManager.swift; sourceTree = "<group>"; };
+		EB5BCEE61D11C18800076874 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = ../LoginViewController.swift; sourceTree = "<group>"; };
+		EB5BCEE81D11C1E200076874 /* MoreTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MoreTableViewController.swift; path = ../MoreTableViewController.swift; sourceTree = "<group>"; };
+		EB5BCEEA1D11C22800076874 /* SignOrLogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignOrLogViewController.swift; path = ../SignOrLogViewController.swift; sourceTree = "<group>"; };
+		EB5BCEEC1D11C26100076874 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignUpViewController.swift; path = ../SignUpViewController.swift; sourceTree = "<group>"; };
+		EB5BCEEE1D11C2B200076874 /* CampTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CampTabBarController.swift; path = ../CampTabBarController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EB5BCE8F1D11BBD800076874 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB5BCED11D11BC5600076874 /* libc++.tbd in Frameworks */,
+				EB5BCECF1D11BC4800076874 /* libicucore.tbd in Frameworks */,
+				EB5BCECD1D11BC1900076874 /* SystemConfiguration.framework in Frameworks */,
+				EB5BCECB1D11BC1100076874 /* Security.framework in Frameworks */,
+				EB5BCEC91D11BC0700076874 /* CFNetwork.framework in Frameworks */,
+				EB5BCEC71D11BBF800076874 /* Firebase.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EB5BCEA61D11BBD800076874 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EB5BCEB11D11BBD800076874 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EB5BCE891D11BBD800076874 = {
+			isa = PBXGroup;
+			children = (
+				EB5BCED01D11BC5600076874 /* libc++.tbd */,
+				EB5BCECE1D11BC4800076874 /* libicucore.tbd */,
+				EB5BCECC1D11BC1900076874 /* SystemConfiguration.framework */,
+				EB5BCECA1D11BC1100076874 /* Security.framework */,
+				EB5BCEC81D11BC0700076874 /* CFNetwork.framework */,
+				EB5BCEC61D11BBF800076874 /* Firebase.framework */,
+				EB5BCE941D11BBD800076874 /* Campfire */,
+				EB5BCEAC1D11BBD800076874 /* CampfireTests */,
+				EB5BCEB71D11BBD800076874 /* CampfireUITests */,
+				EB5BCE931D11BBD800076874 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EB5BCE931D11BBD800076874 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EB5BCE921D11BBD800076874 /* Campfire.app */,
+				EB5BCEA91D11BBD800076874 /* CampfireTests.xctest */,
+				EB5BCEB41D11BBD800076874 /* CampfireUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EB5BCE941D11BBD800076874 /* Campfire */ = {
+			isa = PBXGroup;
+			children = (
+				EB5BCE951D11BBD800076874 /* AppDelegate.swift */,
+				EB5BCED51D11BE8100076874 /* Model */,
+				EB5BCED41D11BE7E00076874 /* View */,
+				EB5BCED31D11BE7B00076874 /* Controller */,
+				EB5BCE991D11BBD800076874 /* Main.storyboard */,
+				EB5BCE9F1D11BBD800076874 /* Assets.xcassets */,
+				EB5BCEA11D11BBD800076874 /* LaunchScreen.storyboard */,
+				EB5BCEA41D11BBD800076874 /* Info.plist */,
+				EB5BCE9C1D11BBD800076874 /* Campfire.xcdatamodeld */,
+			);
+			path = Campfire;
+			sourceTree = "<group>";
+		};
+		EB5BCEAC1D11BBD800076874 /* CampfireTests */ = {
+			isa = PBXGroup;
+			children = (
+				EB5BCEAD1D11BBD800076874 /* CampfireTests.swift */,
+				EB5BCEAF1D11BBD800076874 /* Info.plist */,
+			);
+			path = CampfireTests;
+			sourceTree = "<group>";
+		};
+		EB5BCEB71D11BBD800076874 /* CampfireUITests */ = {
+			isa = PBXGroup;
+			children = (
+				EB5BCEB81D11BBD800076874 /* CampfireUITests.swift */,
+				EB5BCEBA1D11BBD800076874 /* Info.plist */,
+			);
+			path = CampfireUITests;
+			sourceTree = "<group>";
+		};
+		EB5BCED31D11BE7B00076874 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				EB5BCEDE1D11C03100076874 /* DiscoverTableViewController.swift */,
+				EB5BCEEA1D11C22800076874 /* SignOrLogViewController.swift */,
+				EB5BCEEE1D11C2B200076874 /* CampTabBarController.swift */,
+				EB5BCEEC1D11C26100076874 /* SignUpViewController.swift */,
+				EB5BCEE81D11C1E200076874 /* MoreTableViewController.swift */,
+				EB5BCEE61D11C18800076874 /* LoginViewController.swift */,
+				EB5BCEE21D11C0D700076874 /* HomeTableViewController.swift */,
+				EB5BCE971D11BBD800076874 /* ViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		EB5BCED41D11BE7E00076874 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EB5BCED81D11BF1F00076874 /* CampCell.swift */,
+				EB5BCEDA1D11BF9300076874 /* CampCollectionViewCell.swift */,
+				EB5BCEDC1D11BFEE00076874 /* CustomTableViewCell.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		EB5BCED51D11BE8100076874 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EB5BCED61D11BECD00076874 /* APIClient.swift */,
+				EB5BCEE01D11C09500076874 /* FoursquareModels.swift */,
+				EB5BCEE41D11C14B00076874 /* LocationManager.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EB5BCE911D11BBD800076874 /* Campfire */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EB5BCEBD1D11BBD800076874 /* Build configuration list for PBXNativeTarget "Campfire" */;
+			buildPhases = (
+				EB5BCE8E1D11BBD800076874 /* Sources */,
+				EB5BCE8F1D11BBD800076874 /* Frameworks */,
+				EB5BCE901D11BBD800076874 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Campfire;
+			productName = Campfire;
+			productReference = EB5BCE921D11BBD800076874 /* Campfire.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EB5BCEA81D11BBD800076874 /* CampfireTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EB5BCEC01D11BBD800076874 /* Build configuration list for PBXNativeTarget "CampfireTests" */;
+			buildPhases = (
+				EB5BCEA51D11BBD800076874 /* Sources */,
+				EB5BCEA61D11BBD800076874 /* Frameworks */,
+				EB5BCEA71D11BBD800076874 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EB5BCEAB1D11BBD800076874 /* PBXTargetDependency */,
+			);
+			name = CampfireTests;
+			productName = CampfireTests;
+			productReference = EB5BCEA91D11BBD800076874 /* CampfireTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		EB5BCEB31D11BBD800076874 /* CampfireUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EB5BCEC31D11BBD800076874 /* Build configuration list for PBXNativeTarget "CampfireUITests" */;
+			buildPhases = (
+				EB5BCEB01D11BBD800076874 /* Sources */,
+				EB5BCEB11D11BBD800076874 /* Frameworks */,
+				EB5BCEB21D11BBD800076874 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EB5BCEB61D11BBD800076874 /* PBXTargetDependency */,
+			);
+			name = CampfireUITests;
+			productName = CampfireUITests;
+			productReference = EB5BCEB41D11BBD800076874 /* CampfireUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EB5BCE8A1D11BBD800076874 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = Turk;
+				TargetAttributes = {
+					EB5BCE911D11BBD800076874 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					EB5BCEA81D11BBD800076874 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = EB5BCE911D11BBD800076874;
+					};
+					EB5BCEB31D11BBD800076874 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = EB5BCE911D11BBD800076874;
+					};
+				};
+			};
+			buildConfigurationList = EB5BCE8D1D11BBD800076874 /* Build configuration list for PBXProject "Campfire" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EB5BCE891D11BBD800076874;
+			productRefGroup = EB5BCE931D11BBD800076874 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EB5BCE911D11BBD800076874 /* Campfire */,
+				EB5BCEA81D11BBD800076874 /* CampfireTests */,
+				EB5BCEB31D11BBD800076874 /* CampfireUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EB5BCE901D11BBD800076874 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB5BCEA31D11BBD800076874 /* LaunchScreen.storyboard in Resources */,
+				EB5BCEA01D11BBD800076874 /* Assets.xcassets in Resources */,
+				EB5BCE9B1D11BBD800076874 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EB5BCEA71D11BBD800076874 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EB5BCEB21D11BBD800076874 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EB5BCE8E1D11BBD800076874 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB5BCEE71D11C18800076874 /* LoginViewController.swift in Sources */,
+				EB5BCEEB1D11C22800076874 /* SignOrLogViewController.swift in Sources */,
+				EB5BCEE11D11C09500076874 /* FoursquareModels.swift in Sources */,
+				EB5BCED91D11BF2000076874 /* CampCell.swift in Sources */,
+				EB5BCE981D11BBD800076874 /* ViewController.swift in Sources */,
+				EB5BCEE51D11C14B00076874 /* LocationManager.swift in Sources */,
+				EB5BCEEF1D11C2B200076874 /* CampTabBarController.swift in Sources */,
+				EB5BCE961D11BBD800076874 /* AppDelegate.swift in Sources */,
+				EB5BCEE31D11C0D700076874 /* HomeTableViewController.swift in Sources */,
+				EB5BCEDD1D11BFEE00076874 /* CustomTableViewCell.swift in Sources */,
+				EB5BCEED1D11C26100076874 /* SignUpViewController.swift in Sources */,
+				EB5BCEDB1D11BF9300076874 /* CampCollectionViewCell.swift in Sources */,
+				EB5BCE9E1D11BBD800076874 /* Campfire.xcdatamodeld in Sources */,
+				EB5BCEDF1D11C03100076874 /* DiscoverTableViewController.swift in Sources */,
+				EB5BCEE91D11C1E200076874 /* MoreTableViewController.swift in Sources */,
+				EB5BCED71D11BECD00076874 /* APIClient.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EB5BCEA51D11BBD800076874 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB5BCEAE1D11BBD800076874 /* CampfireTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EB5BCEB01D11BBD800076874 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB5BCEB91D11BBD800076874 /* CampfireUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EB5BCEAB1D11BBD800076874 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EB5BCE911D11BBD800076874 /* Campfire */;
+			targetProxy = EB5BCEAA1D11BBD800076874 /* PBXContainerItemProxy */;
+		};
+		EB5BCEB61D11BBD800076874 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EB5BCE911D11BBD800076874 /* Campfire */;
+			targetProxy = EB5BCEB51D11BBD800076874 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		EB5BCE991D11BBD800076874 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EB5BCE9A1D11BBD800076874 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		EB5BCEA11D11BBD800076874 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EB5BCEA21D11BBD800076874 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EB5BCEBB1D11BBD800076874 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EB5BCEBC1D11BBD800076874 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EB5BCEBE1D11BBD800076874 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = Campfire/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Turk.Campfire;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		EB5BCEBF1D11BBD800076874 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = Campfire/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Turk.Campfire;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		EB5BCEC11D11BBD800076874 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = CampfireTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Turk.CampfireTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Campfire.app/Campfire";
+			};
+			name = Debug;
+		};
+		EB5BCEC21D11BBD800076874 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = CampfireTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Turk.CampfireTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Campfire.app/Campfire";
+			};
+			name = Release;
+		};
+		EB5BCEC41D11BBD800076874 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = CampfireUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Turk.CampfireUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Campfire;
+			};
+			name = Debug;
+		};
+		EB5BCEC51D11BBD800076874 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = CampfireUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Turk.CampfireUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Campfire;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EB5BCE8D1D11BBD800076874 /* Build configuration list for PBXProject "Campfire" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EB5BCEBB1D11BBD800076874 /* Debug */,
+				EB5BCEBC1D11BBD800076874 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EB5BCEBD1D11BBD800076874 /* Build configuration list for PBXNativeTarget "Campfire" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EB5BCEBE1D11BBD800076874 /* Debug */,
+				EB5BCEBF1D11BBD800076874 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		EB5BCEC01D11BBD800076874 /* Build configuration list for PBXNativeTarget "CampfireTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EB5BCEC11D11BBD800076874 /* Debug */,
+				EB5BCEC21D11BBD800076874 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		EB5BCEC31D11BBD800076874 /* Build configuration list for PBXNativeTarget "CampfireUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EB5BCEC41D11BBD800076874 /* Debug */,
+				EB5BCEC51D11BBD800076874 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		EB5BCE9C1D11BBD800076874 /* Campfire.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				EB5BCE9D1D11BBD800076874 /* Campfire.xcdatamodel */,
+			);
+			currentVersion = EB5BCE9D1D11BBD800076874 /* Campfire.xcdatamodel */;
+			path = Campfire.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = EB5BCE8A1D11BBD800076874 /* Project object */;
+}
