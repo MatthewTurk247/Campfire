@@ -489,13 +489,13 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="GH2-gY-4hP"/>
                                 <exclude reference="iC1-j3-1qv"/>
                                 <exclude reference="wCd-5H-6gn"/>
-                                <exclude reference="GH2-gY-4hP"/>
                                 <exclude reference="87d-nR-5ph"/>
                                 <exclude reference="CKR-mo-XAx"/>
-                                <exclude reference="X7B-4f-C85"/>
                                 <exclude reference="SpH-4J-ztW"/>
+                                <exclude reference="X7B-4f-C85"/>
                                 <exclude reference="sZc-4L-gXE"/>
                                 <exclude reference="8BR-gq-viR"/>
                             </mask>

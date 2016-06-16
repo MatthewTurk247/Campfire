@@ -151,6 +151,10 @@ extension HomeTableViewController: UICollectionViewDelegate, UICollectionViewDat
         return 9
     }
     
+    //This is where the bodies are buried. 
+    
+    //I'm thinking its a sectioning index issue -- namcollisions = possibility, conflict with UIKit 
+    //Array is too complex -- definitely, so another potential place to look 
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cCell", forIndexPath: indexPath) as! CampCollectionViewCell
         
@@ -195,6 +199,8 @@ extension HomeTableViewController: UICollectionViewDelegate, UICollectionViewDat
             //colletionView.tag is always 0; what can we do to make it 0, 1, 2, 3, 4 like the parent cells
             cell.campLabel.text = self.illinoisCampTitles[self.tableViewIndexPath][indexPath.item]
         })
+        
+        //Basel says clean this up or face his wrath
         cell.backgroundColor = [[UIColor(red: CGFloat(drand48()), green: CGFloat(drand48()) , blue: CGFloat(drand48()), alpha: 1.0), UIColor(red: CGFloat(drand48()), green: CGFloat(drand48()) , blue: CGFloat(drand48()), alpha: 1.0), UIColor(red: CGFloat(drand48()), green: CGFloat(drand48()) , blue: CGFloat(drand48()), alpha: 1.0), UIColor(red: CGFloat(drand48()), green: CGFloat(drand48()) , blue: CGFloat(drand48()), alpha: 1.0), UIColor(red: CGFloat(drand48()), green: CGFloat(drand48()) , blue: CGFloat(drand48()), alpha: 1.0), UIColor(red: CGFloat(drand48()), green: CGFloat(drand48()) , blue: CGFloat(drand48()), alpha: 1.0), UIColor(red: CGFloat(drand48()), green: CGFloat(drand48()) , blue: CGFloat(drand48()), alpha: 1.0), UIColor(red: CGFloat(drand48()), green: CGFloat(drand48()) , blue: CGFloat(drand48()), alpha: 1.0), UIColor(red: CGFloat(drand48()), green: CGFloat(drand48()) , blue: CGFloat(drand48()), alpha: 1.0), UIColor(red: CGFloat(drand48()), green: CGFloat(drand48()) , blue: CGFloat(drand48()), alpha: 1.0), UIColor(red: CGFloat(drand48()), green: CGFloat(drand48()) , blue: CGFloat(drand48()), alpha: 1.0), UIColor(red: CGFloat(drand48()), green: CGFloat(drand48()) , blue: CGFloat(drand48()), alpha: 1.0), UIColor(red: CGFloat(drand48()), green: CGFloat(drand48()) , blue: CGFloat(drand48()), alpha: 1.0), UIColor(red: CGFloat(drand48()), green: CGFloat(drand48()) , blue: CGFloat(drand48()), alpha: 1.0), UIColor(red: CGFloat(drand48()), green: CGFloat(drand48()) , blue: CGFloat(drand48()), alpha: 1.0), UIColor(red: CGFloat(drand48()), green: CGFloat(drand48()) , blue: CGFloat(drand48()), alpha: 1.0)]][collectionView.tag][indexPath.item]
         print(collectionView.tag)
         cell.blur.layer.cornerRadius = 5
