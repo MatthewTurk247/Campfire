@@ -17,7 +17,6 @@ class HomeTableViewController: UITableViewController {
     let titles: [[String]] = [["The Palo Alto Unicorns 1", "The Palo Alto Unicorns 2", "The Palo Alto Unicorns 3", "The Palo Alto Unicorns 4", "The Palo Alto Unicorns 5", "The Palo Alto Unicorns 6", "The Palo Alto Unicorns 7", "The Palo Alto Unicorns 8", "The Palo Alto Unicorns 9", "The Palo Alto Unicorns 10", "The Palo Alto Unicorns 11", "The Palo Alto Unicorns 12", "The Palo Alto Unicorns 13", "The Palo Alto Unicorns 14", "The Palo Alto Unicorns 15", "The Palo Alto Unicorns 16"]]
     var illinoisCampTitles: [[String]] = [[], [], [], [], []]
     var storedOffsets = [Int: CGFloat]()
-    var tableViewIndexPath = Int()
     @IBOutlet weak var collectionView: UICollectionView!
     //let cats = ["Nearby", "Great Deals", "Popular Camps", "Based On Your Searches", "Like Camps You've Been To"]
     let cats = ["Nearby", "Great Deals", "Popular Camps", "Trending Camps", "Last Minute Offers"]
@@ -50,7 +49,7 @@ class HomeTableViewController: UITableViewController {
     func setCollectionViewDataSourceDelegate
         <D: protocol<UICollectionViewDataSource, UICollectionViewDelegate>>
         (dataSourceDelegate: D, forRow row: Int) {
-        
+        print("NUMBER: \(row)")
         collectionView.delegate = dataSourceDelegate
         collectionView.dataSource = dataSourceDelegate
         collectionView.tag = row
@@ -77,11 +76,7 @@ class HomeTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("homeCell", forIndexPath: indexPath) as! CustomTableViewCell
-        tableViewIndexPath = indexPath.section
-        //cell.collectionView.tag = indexPath.section
-        //        print(cell.collectionView.tag)
-        print("HELLO: \(indexPath.section)")
-        print(cell.collectionView.tag)
+        cell.contentView.tag = indexPath.section
         return cell
     }
     
@@ -148,13 +143,14 @@ class HomeTableViewController: UITableViewController {
 
 extension HomeTableViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 9
+        //print(illinoisCampTitles[collectionView.superview!.tag].count) -- it's an empy array by this point in the code
+        return 8
     }
     
     //This is where the bodies are buried. 
     
     //I'm thinking its a sectioning index issue -- namcollisions = possibility, conflict with UIKit 
-    //Array is too complex -- definitely, so another potential place to look 
+    //Array is too complex -- definitely, so another potential place to look
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cCell", forIndexPath: indexPath) as! CampCollectionViewCell
         
@@ -183,7 +179,6 @@ extension HomeTableViewController: UICollectionViewDelegate, UICollectionViewDat
                 //                self.illinoisCampTitles[3].append(camp.objectForKey("title") as! String + "4")
                 //                self.illinoisCampTitles[4].append(camp.objectForKey("title") as! String + "5")
                 self.illinoisCampTitles[0].append("1: \(camp.objectForKey("title") as! String)")
-                print(self.illinoisCampTitles[0])
                 self.illinoisCampTitles[1].append("2: \(camp.objectForKey("title") as! String)")
                 self.illinoisCampTitles[2].append("3: \(camp.objectForKey("title") as! String)")
                 self.illinoisCampTitles[3].append("4: \(camp.objectForKey("title") as! String)")
@@ -191,17 +186,15 @@ extension HomeTableViewController: UICollectionViewDelegate, UICollectionViewDat
                 print("ENTRO")
                 //print("HELLO: \(self.illinoisCampTitles as NSArray)")
             }
-            print("HELLO: \(self.illinoisCampTitles)")
-            print("HOLA: \(self.illinoisCampTitles[1][0])")
-            print(collectionView.tag)
-            print(indexPath.item)
-            print("First: \(self.tableViewIndexPath)")
             //colletionView.tag is always 0; what can we do to make it 0, 1, 2, 3, 4 like the parent cells
-            cell.campLabel.text = self.illinoisCampTitles[self.tableViewIndexPath][indexPath.item]
+            print(self.tableView.numberOfSections)
+            print(self.tableView.indexPathsForVisibleRows?.first?.section)
+            print("THIS \(collectionView.superview!.tag)")
+            cell.campLabel.text = self.illinoisCampTitles[collectionView.superview!.tag][indexPath.item]
         })
         
         //Basel says clean this up or face his wrath
-        cell.backgroundColor = [[UIColor(red: CGFloat(drand48()), green: CGFloat(drand48()) , blue: CGFloat(drand48()), alpha: 1.0), UIColor(red: CGFloat(drand48()), green: CGFloat(drand48()) , blue: CGFloat(drand48()), alpha: 1.0), UIColor(red: CGFloat(drand48()), green: CGFloat(drand48()) , blue: CGFloat(drand48()), alpha: 1.0), UIColor(red: CGFloat(drand48()), green: CGFloat(drand48()) , blue: CGFloat(drand48()), alpha: 1.0), UIColor(red: CGFloat(drand48()), green: CGFloat(drand48()) , blue: CGFloat(drand48()), alpha: 1.0), UIColor(red: CGFloat(drand48()), green: CGFloat(drand48()) , blue: CGFloat(drand48()), alpha: 1.0), UIColor(red: CGFloat(drand48()), green: CGFloat(drand48()) , blue: CGFloat(drand48()), alpha: 1.0), UIColor(red: CGFloat(drand48()), green: CGFloat(drand48()) , blue: CGFloat(drand48()), alpha: 1.0), UIColor(red: CGFloat(drand48()), green: CGFloat(drand48()) , blue: CGFloat(drand48()), alpha: 1.0), UIColor(red: CGFloat(drand48()), green: CGFloat(drand48()) , blue: CGFloat(drand48()), alpha: 1.0), UIColor(red: CGFloat(drand48()), green: CGFloat(drand48()) , blue: CGFloat(drand48()), alpha: 1.0), UIColor(red: CGFloat(drand48()), green: CGFloat(drand48()) , blue: CGFloat(drand48()), alpha: 1.0), UIColor(red: CGFloat(drand48()), green: CGFloat(drand48()) , blue: CGFloat(drand48()), alpha: 1.0), UIColor(red: CGFloat(drand48()), green: CGFloat(drand48()) , blue: CGFloat(drand48()), alpha: 1.0), UIColor(red: CGFloat(drand48()), green: CGFloat(drand48()) , blue: CGFloat(drand48()), alpha: 1.0), UIColor(red: CGFloat(drand48()), green: CGFloat(drand48()) , blue: CGFloat(drand48()), alpha: 1.0)]][collectionView.tag][indexPath.item]
+        cell.backgroundColor = [[UIColor(red: CGFloat(drand48()), green: CGFloat(drand48()) , blue: CGFloat(drand48()), alpha: 1.0), UIColor(red: CGFloat(drand48()), green: CGFloat(drand48()) , blue: CGFloat(drand48()), alpha: 1.0), UIColor(red: CGFloat(drand48()), green: CGFloat(drand48()) , blue: CGFloat(drand48()), alpha: 1.0), UIColor(red: CGFloat(drand48()), green: CGFloat(drand48()) , blue: CGFloat(drand48()), alpha: 1.0), UIColor(red: CGFloat(drand48()), green: CGFloat(drand48()) , blue: CGFloat(drand48()), alpha: 1.0), UIColor(red: CGFloat(drand48()), green: CGFloat(drand48()) , blue: CGFloat(drand48()), alpha: 1.0), UIColor(red: CGFloat(drand48()), green: CGFloat(drand48()) , blue: CGFloat(drand48()), alpha: 1.0), UIColor(red: CGFloat(drand48()), green: CGFloat(drand48()) , blue: CGFloat(drand48()), alpha: 1.0), UIColor(red: CGFloat(drand48()), green: CGFloat(drand48()) , blue: CGFloat(drand48()), alpha: 1.0), UIColor(red: CGFloat(drand48()), green: CGFloat(drand48()) , blue: CGFloat(drand48()), alpha: 1.0), UIColor(red: CGFloat(drand48()), green: CGFloat(drand48()) , blue: CGFloat(drand48()), alpha: 1.0), UIColor(red: CGFloat(drand48()), green: CGFloat(drand48()) , blue: CGFloat(drand48()), alpha: 1.0), UIColor(red: CGFloat(drand48()), green: CGFloat(drand48()) , blue: CGFloat(drand48()), alpha: 1.0), UIColor(red: CGFloat(drand48()), green: CGFloat(drand48()) , blue: CGFloat(drand48()), alpha: 1.0), UIColor(red: CGFloat(drand48()), green: CGFloat(drand48()) , blue: CGFloat(drand48()), alpha: 1.0), UIColor(red: CGFloat(drand48()), green: CGFloat(drand48()) , blue: CGFloat(drand48()), alpha: 1.0)]][0][indexPath.item]
         print(collectionView.tag)
         cell.blur.layer.cornerRadius = 5
         cell.blur.clipsToBounds = false

@@ -34,6 +34,10 @@
 		EB5BCEEB1D11C22800076874 /* SignOrLogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5BCEEA1D11C22800076874 /* SignOrLogViewController.swift */; };
 		EB5BCEED1D11C26100076874 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5BCEEC1D11C26100076874 /* SignUpViewController.swift */; };
 		EB5BCEEF1D11C2B200076874 /* CampTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5BCEEE1D11C2B200076874 /* CampTabBarController.swift */; };
+		EBCA1DBA1D1314A400B534F3 /* WalkthroughViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCA1DB91D1314A400B534F3 /* WalkthroughViewController.swift */; };
+		EBCA1DBC1D13151600B534F3 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCA1DBB1D13151600B534F3 /* PageViewController.swift */; };
+		EBCA1DBE1D131E1A00B534F3 /* FeaturedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCA1DBD1D131E1A00B534F3 /* FeaturedViewController.swift */; };
+		EBCA1DC01D131E3E00B534F3 /* FeaturedPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCA1DBF1D131E3E00B534F3 /* FeaturedPageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +91,10 @@
 		EB5BCEEA1D11C22800076874 /* SignOrLogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignOrLogViewController.swift; path = ../SignOrLogViewController.swift; sourceTree = "<group>"; };
 		EB5BCEEC1D11C26100076874 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignUpViewController.swift; path = ../SignUpViewController.swift; sourceTree = "<group>"; };
 		EB5BCEEE1D11C2B200076874 /* CampTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CampTabBarController.swift; path = ../CampTabBarController.swift; sourceTree = "<group>"; };
+		EBCA1DB91D1314A400B534F3 /* WalkthroughViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalkthroughViewController.swift; sourceTree = "<group>"; };
+		EBCA1DBB1D13151600B534F3 /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PageViewController.swift; path = ../PageViewController.swift; sourceTree = "<group>"; };
+		EBCA1DBD1D131E1A00B534F3 /* FeaturedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeaturedViewController.swift; sourceTree = "<group>"; };
+		EBCA1DBF1D131E3E00B534F3 /* FeaturedPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeaturedPageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +198,10 @@
 				EB5BCEE81D11C1E200076874 /* MoreTableViewController.swift */,
 				EB5BCEE61D11C18800076874 /* LoginViewController.swift */,
 				EB5BCEE21D11C0D700076874 /* HomeTableViewController.swift */,
+				EBCA1DB91D1314A400B534F3 /* WalkthroughViewController.swift */,
+				EBCA1DBB1D13151600B534F3 /* PageViewController.swift */,
+				EBCA1DBD1D131E1A00B534F3 /* FeaturedViewController.swift */,
+				EBCA1DBF1D131E3E00B534F3 /* FeaturedPageViewController.swift */,
 				EB5BCE971D11BBD800076874 /* ViewController.swift */,
 			);
 			name = Controller;
@@ -350,7 +362,9 @@
 				EB5BCEEB1D11C22800076874 /* SignOrLogViewController.swift in Sources */,
 				EB5BCEE11D11C09500076874 /* FoursquareModels.swift in Sources */,
 				EB5BCED91D11BF2000076874 /* CampCell.swift in Sources */,
+				EBCA1DBE1D131E1A00B534F3 /* FeaturedViewController.swift in Sources */,
 				EB5BCE981D11BBD800076874 /* ViewController.swift in Sources */,
+				EBCA1DC01D131E3E00B534F3 /* FeaturedPageViewController.swift in Sources */,
 				EB5BCEE51D11C14B00076874 /* LocationManager.swift in Sources */,
 				EB5BCEEF1D11C2B200076874 /* CampTabBarController.swift in Sources */,
 				EB5BCE961D11BBD800076874 /* AppDelegate.swift in Sources */,
@@ -361,6 +375,8 @@
 				EB5BCE9E1D11BBD800076874 /* Campfire.xcdatamodeld in Sources */,
 				EB5BCEDF1D11C03100076874 /* DiscoverTableViewController.swift in Sources */,
 				EB5BCEE91D11C1E200076874 /* MoreTableViewController.swift in Sources */,
+				EBCA1DBC1D13151600B534F3 /* PageViewController.swift in Sources */,
+				EBCA1DBA1D1314A400B534F3 /* WalkthroughViewController.swift in Sources */,
 				EB5BCED71D11BECD00076874 /* APIClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -596,6 +612,7 @@
 				EB5BCEBF1D11BBD800076874 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EB5BCEC01D11BBD800076874 /* Build configuration list for PBXNativeTarget "CampfireTests" */ = {
 			isa = XCConfigurationList;
@@ -604,6 +621,7 @@
 				EB5BCEC21D11BBD800076874 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EB5BCEC31D11BBD800076874 /* Build configuration list for PBXNativeTarget "CampfireUITests" */ = {
 			isa = XCConfigurationList;
@@ -612,6 +630,7 @@
 				EB5BCEC51D11BBD800076874 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
