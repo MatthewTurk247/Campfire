@@ -14,88 +14,107 @@ import Firebase
 
 class DisoverTableViewController: UITableViewController, MKMapViewDelegate, CLLocationManagerDelegate, UISearchBarDelegate, UISearchControllerDelegate, UISearchResultsUpdating {
     
-    var searchController = UISearchController(searchResultsController: nil)
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet var theMapView: MKMapView!
-    let manager = LocationManager()
+    var illinoisCamps:AnyObject!
+    var center = CLLocation(latitude: 37.7832889, longitude: -122.4056973)
+    var long = Double()
+    var lat = Double()
+    let myRootRef = Firebase(url:"https://campfireapp.firebaseio.com")
+    let coreLocationManager = CLLocationManager()
+    var locationManager = LocationManager.sharedInstance
+    var geoFire = GeoFire(firebaseRef: Firebase(url: "campfireapp.firebaseio.com"))
     override func viewDidLoad() {
         super.viewDidLoad()
+        //this is the only getLocation() that currently works
+        getLocation()
+        //if location is disabled just have image there saying "We need you to turn on location access in settings first (emoji)"
         
-        manager.getPermission()
-        searchController.searchResultsUpdater = self
-        searchController.hidesNavigationBarDuringPresentation = true
-        searchController.dimsBackgroundDuringPresentation = false
-        definesPresentationContext = true
-        stackView.addSubview(searchController.searchBar)
+        coreLocationManager.delegate = self
         
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-        //self.theMapView.removeFromSuperview()
-        //self.navigationController!.view.addSubview(theMapView)
-        //        self.tabBarController?.navigationController?.view.addSubview(theMapView)
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        locationManager = LocationManager.sharedInstance
         
-        let myRootRef = Firebase(url:"https://campfireapp.firebaseio.com")
-        // Write data to Firebase
+        let authorizationCode = CLLocationManager.authorizationStatus()
         
-        // Read data and react to changes
+        if authorizationCode == CLAuthorizationStatus.NotDetermined && coreLocationManager.respondsToSelector("requestAlwaysAuthorization") || coreLocationManager.respondsToSelector("requestWhenInUseAuthorization"){
+            if NSBundle.mainBundle().objectForInfoDictionaryKey("NSLocationAlwaysUsageDescription") != nil {
+                coreLocationManager.requestAlwaysAuthorization()
+            }else{
+                print("No descirption provided")
+            }
+        }else{
+            getLocation()
+        }
+        
+    }
+    
+    func createSearchBar() {
+        let searchBar = UISearchBar()
+        searchBar.showsCancelButton = false
+        searchBar.placeholder = "Search America For Camps"
+        searchBar.delegate = self
+        self.navigationItem.titleView = searchBar
+        searchBar.tintColor = UIColor.whiteColor()
+        self.tabBarController?.navigationItem.titleView = searchBar
+    }
+    
+    func getLocation(){
+        print("getting")
+        locationManager.startUpdatingLocationWithCompletionHandler { (latitude, longitude, status, verboseMessage, error) -> () in
+            self.displayLocation(CLLocation(latitude: latitude, longitude: longitude))
+        }
+        
+    }
+    
+    func displayLocation(location:CLLocation) {
+        print("displaying: \(location.coordinate)")
+        print(location.coordinate.latitude, location.coordinate.longitude)
+        theMapView.setRegion(MKCoordinateRegion(center: CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude), span: MKCoordinateSpanMake(1.0, 1.0)), animated: true)
+        
+        let locationPinCoord = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = locationPinCoord
+        
+        //theMapView.addAnnotation(annotation)
+        //theMapView.showAnnotations([annotation], animated: true)
+        
         myRootRef.observeEventType(.Value, withBlock: {
             snapshot in
-            print("\(snapshot.key) -> \(snapshot.value)")
+            
+            
+            self.illinoisCamps = snapshot.value.objectForKey("camps")!.objectForKey("us")!.objectForKey("illinois")!
+            for camp in (self.illinoisCamps as? NSArray)! {
+                //this is where you would set the x and y of iterating illinois camps and the key should be the title object for key
+                //here lat will be the lat of the camp object for key and for key will be the camp name
+                self.geoFire.setLocation(CLLocation(latitude: camp.objectForKey("coordinates")!.objectForKey("x") as! Double, longitude: camp.objectForKey("coordinates")!.objectForKey("y") as! Double), forKey: camp.objectForKey("title") as! String) { (error) in
+                    if (error != nil) {
+                        print("An error occured: \(error)")
+                    } else {
+                        print("Saved location successfully: \(CLLocation(latitude: camp.objectForKey("coordinates")!.objectForKey("x") as! Double, longitude: camp.objectForKey("coordinates")!.objectForKey("y") as! Double))")
+                    }
+                }
+            }
         })
         
-        //        self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName:UIFont(name: "Futura", size: 20)!]
-        //        if (CLLocationManager.locationServicesEnabled()) {
-        //            locationManager.delegate = self
-        //            locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        //            locationManager.requestWhenInUseAuthorization()
-        //            locationManager.startUpdatingLocation()
-        //        } else {
-        //            print("Location services are not enabled");
-        //        }
-        //        let lat:CLLocationDegrees = 41.86438
-        //        let long:CLLocationDegrees = -87.628856
-        //
-        //        let latDelta:CLLocationDegrees = 0.01
-        //        let longDelta:CLLocationDegrees = 0.01
-        //
-        //        let theSpan:MKCoordinateSpan = MKCoordinateSpanMake(latDelta, longDelta)
-        //
-        //        let location:CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: lat, longitude: long)
-        //
-        //        let theRegion:MKCoordinateRegion = MKCoordinateRegionMake(location, theSpan)
-        //
-        //        self.theMapView.setRegion(theRegion, animated: true)
-        //
-        //        let theLocationPin = MKPointAnnotation()
-        //
-        //        let pinTitle = "The Location Pin"
-        //
-        //        let pinSubtitle = "The Location Subtitle"
-        //
-        //        theLocationPin.coordinate = location
+        var circleQuery = self.geoFire.queryAtLocation(location, withRadius: 160.9344)
+        var queryHandle = circleQuery.observeEventType(.KeyEntered, withBlock: { (key: String!, location: CLLocation!) in
+            print("Key '\(key)' entered the search area and is at location '\(location)'")
+            var pin = MKPointAnnotation()
+            pin.title = key
+            pin.coordinate = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+            self.theMapView.addAnnotation(pin)
+        })
         
-        //        var camps = [Camp]()
-        //        Alamofire.request(.GET, "http://data.illinois.gov/resource/ge6m-zffc.json", parameters: nil, encoding: ParameterEncoding.URL, headers: nil).responseJSON { (response) -> Void in
-        //            if let JSON = response.result.value {
-        //                for camp in (JSON as? NSArray)! {
-        //                    camps.append(Camp(titled: camp.objectForKey("camp_name")! as! String))
-        //                    //print(camp.objectForKey("camp_name"))
-        //                    var coords:NSMutableArray = camp.objectForKey("location1")?.objectForKey("coordinates") as! NSMutableArray
-        //                    var annotaion = MKPointAnnotation()
-        //                    var lat:Double = coords[0] as! Double
-        //                    var lon:Double = coords[1] as! Double
-        //                    var aLocation = CLLocationCoordinate2D(latitude: lat, longitude: lon)
-        //                    print(aLocation)
-        //                }
-        //            }
-        //        }
+        locationManager.reverseGeocodeLocationWithCoordinates(location, onReverseGeocodingCompletionHandler: { (reverseGecodeInfo, placemark, error) -> Void in
+            
+            let address = reverseGecodeInfo?.objectForKey("formattedAddress") as! String
+            print(address)
+            //self.locationInfo.text = address
+            
+        })
         
-        //        theLocationPin.title = "\(pinTitle)"
-        //        theLocationPin.subtitle = "\(pinSubtitle)"
-        //        self.theMapView.addAnnotation(theLocationPin)
-        //        // Do any additional setup after loading the view.
+        
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -103,22 +122,6 @@ class DisoverTableViewController: UITableViewController, MKMapViewDelegate, CLLo
         // Dispose of any resources that can be recreated.
     }
     
-    //    func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
-    //        locationManager.stopUpdatingLocation()
-    //        //removeLoadingView()
-    //        //        if ((error) != nil) {
-    //        //            print(error, terminator: "")
-    //        //        }
-    //    }
-    
-    
-    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let locationArray = locations as NSArray
-        let locationObj = locationArray.lastObject as! CLLocation
-        let coord = locationObj.coordinate
-        print(coord.latitude)
-        print(coord.longitude)
-    }
     
     // MARK: - Table view data source
     
@@ -129,14 +132,14 @@ class DisoverTableViewController: UITableViewController, MKMapViewDelegate, CLLo
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 10
+        return 8
     }
     
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! CampCell
-        
-        
+        //print(nearbyCampTitles)
+        //print("Here", theMapView.annotations[0].title)
         // Configure the cell..
         return cell
     }
@@ -150,6 +153,16 @@ class DisoverTableViewController: UITableViewController, MKMapViewDelegate, CLLo
         self.tabBarController?.title = nil
         //        self.clearsSelectionOnViewWillAppear = self.splitViewController!.collapsed
         //        super.viewWillAppear(animated)
+    }
+    
+    func mapView(mapView: MKMapView, didUpdateUserLocation userLocation: MKUserLocation) {
+        
+        var region = MKCoordinateRegion()
+        region.center = mapView.userLocation.coordinate
+        region.span.latitudeDelta = 0.01
+        region.span.longitudeDelta = 0.01
+        
+        mapView.setRegion(region, animated: true)
     }
     
     /*

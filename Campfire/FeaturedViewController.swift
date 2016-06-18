@@ -36,6 +36,8 @@ class FeaturedViewController: UIViewController {
         imageView.image = UIImage(named: imageName)
         pageControl.currentPage = index
         
+        descriptionLabel.removeFromSuperview()
+        
         // customize the next and start button
     }
     

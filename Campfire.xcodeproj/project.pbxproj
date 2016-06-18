@@ -28,7 +28,6 @@
 		EB5BCEDF1D11C03100076874 /* DiscoverTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5BCEDE1D11C03100076874 /* DiscoverTableViewController.swift */; };
 		EB5BCEE11D11C09500076874 /* FoursquareModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5BCEE01D11C09500076874 /* FoursquareModels.swift */; };
 		EB5BCEE31D11C0D700076874 /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5BCEE21D11C0D700076874 /* HomeTableViewController.swift */; };
-		EB5BCEE51D11C14B00076874 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5BCEE41D11C14B00076874 /* LocationManager.swift */; };
 		EB5BCEE71D11C18800076874 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5BCEE61D11C18800076874 /* LoginViewController.swift */; };
 		EB5BCEE91D11C1E200076874 /* MoreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5BCEE81D11C1E200076874 /* MoreTableViewController.swift */; };
 		EB5BCEEB1D11C22800076874 /* SignOrLogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5BCEEA1D11C22800076874 /* SignOrLogViewController.swift */; };
@@ -38,6 +37,8 @@
 		EBCA1DBC1D13151600B534F3 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCA1DBB1D13151600B534F3 /* PageViewController.swift */; };
 		EBCA1DBE1D131E1A00B534F3 /* FeaturedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCA1DBD1D131E1A00B534F3 /* FeaturedViewController.swift */; };
 		EBCA1DC01D131E3E00B534F3 /* FeaturedPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCA1DBF1D131E3E00B534F3 /* FeaturedPageViewController.swift */; };
+		EBCA1DC21D1348E300B534F3 /* GeoFire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBCA1DC11D1348E300B534F3 /* GeoFire.framework */; };
+		EBCA1DC71D14680A00B534F3 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCA1DC61D14680A00B534F3 /* LocationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,7 +86,6 @@
 		EB5BCEDE1D11C03100076874 /* DiscoverTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverTableViewController.swift; sourceTree = "<group>"; };
 		EB5BCEE01D11C09500076874 /* FoursquareModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FoursquareModels.swift; path = ../FoursquareModels.swift; sourceTree = "<group>"; };
 		EB5BCEE21D11C0D700076874 /* HomeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeTableViewController.swift; path = ../HomeTableViewController.swift; sourceTree = "<group>"; };
-		EB5BCEE41D11C14B00076874 /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationManager.swift; path = ../LocationManager.swift; sourceTree = "<group>"; };
 		EB5BCEE61D11C18800076874 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = ../LoginViewController.swift; sourceTree = "<group>"; };
 		EB5BCEE81D11C1E200076874 /* MoreTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MoreTableViewController.swift; path = ../MoreTableViewController.swift; sourceTree = "<group>"; };
 		EB5BCEEA1D11C22800076874 /* SignOrLogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignOrLogViewController.swift; path = ../SignOrLogViewController.swift; sourceTree = "<group>"; };
@@ -95,6 +95,10 @@
 		EBCA1DBB1D13151600B534F3 /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PageViewController.swift; path = ../PageViewController.swift; sourceTree = "<group>"; };
 		EBCA1DBD1D131E1A00B534F3 /* FeaturedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeaturedViewController.swift; sourceTree = "<group>"; };
 		EBCA1DBF1D131E3E00B534F3 /* FeaturedPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeaturedPageViewController.swift; sourceTree = "<group>"; };
+		EBCA1DC11D1348E300B534F3 /* GeoFire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GeoFire.framework; sourceTree = "<group>"; };
+		EBCA1DC31D13498000B534F3 /* Campfire-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Campfire-Bridging-Header.h"; sourceTree = "<group>"; };
+		EBCA1DC61D14680A00B534F3 /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		EBCA1DC81D14C5B300B534F3 /* Chicago.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Chicago.gpx; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +108,7 @@
 			files = (
 				EB5BCED11D11BC5600076874 /* libc++.tbd in Frameworks */,
 				EB5BCECF1D11BC4800076874 /* libicucore.tbd in Frameworks */,
+				EBCA1DC21D1348E300B534F3 /* GeoFire.framework in Frameworks */,
 				EB5BCECD1D11BC1900076874 /* SystemConfiguration.framework in Frameworks */,
 				EB5BCECB1D11BC1100076874 /* Security.framework in Frameworks */,
 				EB5BCEC91D11BC0700076874 /* CFNetwork.framework in Frameworks */,
@@ -133,6 +138,7 @@
 			children = (
 				EB5BCED01D11BC5600076874 /* libc++.tbd */,
 				EB5BCECE1D11BC4800076874 /* libicucore.tbd */,
+				EBCA1DC11D1348E300B534F3 /* GeoFire.framework */,
 				EB5BCECC1D11BC1900076874 /* SystemConfiguration.framework */,
 				EB5BCECA1D11BC1100076874 /* Security.framework */,
 				EB5BCEC81D11BC0700076874 /* CFNetwork.framework */,
@@ -162,6 +168,7 @@
 				EB5BCED41D11BE7E00076874 /* View */,
 				EB5BCED31D11BE7B00076874 /* Controller */,
 				EB5BCE991D11BBD800076874 /* Main.storyboard */,
+				EBCA1DC81D14C5B300B534F3 /* Chicago.gpx */,
 				EB5BCE9F1D11BBD800076874 /* Assets.xcassets */,
 				EB5BCEA11D11BBD800076874 /* LaunchScreen.storyboard */,
 				EB5BCEA41D11BBD800076874 /* Info.plist */,
@@ -191,18 +198,19 @@
 		EB5BCED31D11BE7B00076874 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				EB5BCEE21D11C0D700076874 /* HomeTableViewController.swift */,
 				EB5BCEDE1D11C03100076874 /* DiscoverTableViewController.swift */,
+				EB5BCEE81D11C1E200076874 /* MoreTableViewController.swift */,
 				EB5BCEEA1D11C22800076874 /* SignOrLogViewController.swift */,
 				EB5BCEEE1D11C2B200076874 /* CampTabBarController.swift */,
 				EB5BCEEC1D11C26100076874 /* SignUpViewController.swift */,
-				EB5BCEE81D11C1E200076874 /* MoreTableViewController.swift */,
 				EB5BCEE61D11C18800076874 /* LoginViewController.swift */,
-				EB5BCEE21D11C0D700076874 /* HomeTableViewController.swift */,
 				EBCA1DB91D1314A400B534F3 /* WalkthroughViewController.swift */,
 				EBCA1DBB1D13151600B534F3 /* PageViewController.swift */,
 				EBCA1DBD1D131E1A00B534F3 /* FeaturedViewController.swift */,
 				EBCA1DBF1D131E3E00B534F3 /* FeaturedPageViewController.swift */,
 				EB5BCE971D11BBD800076874 /* ViewController.swift */,
+				EBCA1DC31D13498000B534F3 /* Campfire-Bridging-Header.h */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -222,7 +230,7 @@
 			children = (
 				EB5BCED61D11BECD00076874 /* APIClient.swift */,
 				EB5BCEE01D11C09500076874 /* FoursquareModels.swift */,
-				EB5BCEE41D11C14B00076874 /* LocationManager.swift */,
+				EBCA1DC61D14680A00B534F3 /* LocationManager.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -361,11 +369,11 @@
 				EB5BCEE71D11C18800076874 /* LoginViewController.swift in Sources */,
 				EB5BCEEB1D11C22800076874 /* SignOrLogViewController.swift in Sources */,
 				EB5BCEE11D11C09500076874 /* FoursquareModels.swift in Sources */,
+				EBCA1DC71D14680A00B534F3 /* LocationManager.swift in Sources */,
 				EB5BCED91D11BF2000076874 /* CampCell.swift in Sources */,
 				EBCA1DBE1D131E1A00B534F3 /* FeaturedViewController.swift in Sources */,
 				EB5BCE981D11BBD800076874 /* ViewController.swift in Sources */,
 				EBCA1DC01D131E3E00B534F3 /* FeaturedPageViewController.swift in Sources */,
-				EB5BCEE51D11C14B00076874 /* LocationManager.swift in Sources */,
 				EB5BCEEF1D11C2B200076874 /* CampTabBarController.swift in Sources */,
 				EB5BCE961D11BBD800076874 /* AppDelegate.swift in Sources */,
 				EB5BCEE31D11C0D700076874 /* HomeTableViewController.swift in Sources */,
@@ -521,6 +529,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -529,6 +538,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Turk.Campfire;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Campfire/Campfire-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -536,6 +547,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -544,6 +556,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Turk.Campfire;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Campfire/Campfire-Bridging-Header.h";
 			};
 			name = Release;
 		};

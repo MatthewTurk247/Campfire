@@ -18,12 +18,10 @@ class HomeTableViewController: UITableViewController {
     var illinoisCampTitles: [[String]] = [[], [], [], [], []]
     var storedOffsets = [Int: CGFloat]()
     @IBOutlet weak var collectionView: UICollectionView!
-    //let cats = ["Nearby", "Great Deals", "Popular Camps", "Based On Your Searches", "Like Camps You've Been To"]
     let cats = ["Nearby", "Great Deals", "Popular Camps", "Trending Camps", "Last Minute Offers"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("EWUOIFIOUWEHFIUWENFNOIDKLNDSNVOIDHVIKLS")
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         self.tabBarController?.title = "Home"
@@ -31,25 +29,16 @@ class HomeTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
         self.tabBarController?.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.whiteColor()]
-        //        myRootRef.observeEventType(.Value, withBlock: {
-        //            snapshot in
-        //            //print("\(snapshot.key) -> \(snapshot.value)")
-        //            let illinoisCamps = snapshot.value.objectForKey("camps")!.objectForKey("us")!.objectForKey("illinois")!
-        //            print(illinoisCamps)
-        //            //print(firstName)
-        //        })
         
     }
     
     override func viewDidAppear(animated: Bool) {
-        //self.tabBarController?.navigationController?.navigationBar.viewWithTag(7)?.removeFromSuperview()
         self.tabBarController?.title = "Home"
     }
     
     func setCollectionViewDataSourceDelegate
         <D: protocol<UICollectionViewDataSource, UICollectionViewDelegate>>
         (dataSourceDelegate: D, forRow row: Int) {
-        print("NUMBER: \(row)")
         collectionView.delegate = dataSourceDelegate
         collectionView.dataSource = dataSourceDelegate
         collectionView.tag = row
@@ -172,37 +161,22 @@ extension HomeTableViewController: UICollectionViewDelegate, UICollectionViewDat
                 //change cell header to "Top Camps" and for topCamp in topCamps append topCamp
                 //}
                 //if camp.objectForKey("row") == trending append and stuff only use math for the nearby one
-                
-                //                self.illinoisCampTitles[0].append(camp.objectForKey("title") as! String + "1")
-                //                self.illinoisCampTitles[1].append(camp.objectForKey("title") as! String + "2")
-                //                self.illinoisCampTitles[2].append(camp.objectForKey("title") as! String + "3")
-                //                self.illinoisCampTitles[3].append(camp.objectForKey("title") as! String + "4")
-                //                self.illinoisCampTitles[4].append(camp.objectForKey("title") as! String + "5")
                 self.illinoisCampTitles[0].append("1: \(camp.objectForKey("title") as! String)")
                 self.illinoisCampTitles[1].append("2: \(camp.objectForKey("title") as! String)")
                 self.illinoisCampTitles[2].append("3: \(camp.objectForKey("title") as! String)")
                 self.illinoisCampTitles[3].append("4: \(camp.objectForKey("title") as! String)")
                 self.illinoisCampTitles[4].append("5: \(camp.objectForKey("title") as! String)")
-                print("ENTRO")
-                //print("HELLO: \(self.illinoisCampTitles as NSArray)")
             }
-            //colletionView.tag is always 0; what can we do to make it 0, 1, 2, 3, 4 like the parent cells
-            print(self.tableView.numberOfSections)
-            print(self.tableView.indexPathsForVisibleRows?.first?.section)
-            print("THIS \(collectionView.superview!.tag)")
             cell.campLabel.text = self.illinoisCampTitles[collectionView.superview!.tag][indexPath.item]
         })
         
         //Basel says clean this up or face his wrath
         cell.backgroundColor = [[UIColor(red: CGFloat(drand48()), green: CGFloat(drand48()) , blue: CGFloat(drand48()), alpha: 1.0), UIColor(red: CGFloat(drand48()), green: CGFloat(drand48()) , blue: CGFloat(drand48()), alpha: 1.0), UIColor(red: CGFloat(drand48()), green: CGFloat(drand48()) , blue: CGFloat(drand48()), alpha: 1.0), UIColor(red: CGFloat(drand48()), green: CGFloat(drand48()) , blue: CGFloat(drand48()), alpha: 1.0), UIColor(red: CGFloat(drand48()), green: CGFloat(drand48()) , blue: CGFloat(drand48()), alpha: 1.0), UIColor(red: CGFloat(drand48()), green: CGFloat(drand48()) , blue: CGFloat(drand48()), alpha: 1.0), UIColor(red: CGFloat(drand48()), green: CGFloat(drand48()) , blue: CGFloat(drand48()), alpha: 1.0), UIColor(red: CGFloat(drand48()), green: CGFloat(drand48()) , blue: CGFloat(drand48()), alpha: 1.0), UIColor(red: CGFloat(drand48()), green: CGFloat(drand48()) , blue: CGFloat(drand48()), alpha: 1.0), UIColor(red: CGFloat(drand48()), green: CGFloat(drand48()) , blue: CGFloat(drand48()), alpha: 1.0), UIColor(red: CGFloat(drand48()), green: CGFloat(drand48()) , blue: CGFloat(drand48()), alpha: 1.0), UIColor(red: CGFloat(drand48()), green: CGFloat(drand48()) , blue: CGFloat(drand48()), alpha: 1.0), UIColor(red: CGFloat(drand48()), green: CGFloat(drand48()) , blue: CGFloat(drand48()), alpha: 1.0), UIColor(red: CGFloat(drand48()), green: CGFloat(drand48()) , blue: CGFloat(drand48()), alpha: 1.0), UIColor(red: CGFloat(drand48()), green: CGFloat(drand48()) , blue: CGFloat(drand48()), alpha: 1.0), UIColor(red: CGFloat(drand48()), green: CGFloat(drand48()) , blue: CGFloat(drand48()), alpha: 1.0)]][0][indexPath.item]
-        print(collectionView.tag)
         cell.blur.layer.cornerRadius = 5
         cell.blur.clipsToBounds = false
         cell.blur.layer.masksToBounds = false
         cell.campImageView.image = UIImage(named: "unicorn_img")
-        print(UIImage(named: "unicorn_img"))
-        //cell.campLabel.text = titles[collectionView.tag][indexPath.item]
-        print(illinoisCampTitles)
+        //print(illinoisCampTitles)
         cell.layer.shadowColor = UIColor.blackColor().CGColor
         cell.layer.shadowOffset = CGSize(width: 0, height: 0)
         cell.layer.shadowOpacity = 1.0

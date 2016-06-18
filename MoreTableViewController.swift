@@ -156,6 +156,13 @@ class MoreTableViewController: UITableViewController, UINavigationControllerDele
         self.dismissViewControllerAnimated(true, completion: { () -> Void in
             
         })
+        myRootRef.observeEventType(.Value, withBlock: {
+            snapshot in
+            
+            })
+        userImage.clipsToBounds = true
+        userImage.layer.cornerRadius = userImage.frame.height/2
+        
         //change users image
         //usersimage = image
     }
